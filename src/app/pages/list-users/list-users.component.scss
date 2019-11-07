@@ -1,0 +1,38 @@
+h1 {
+    font-size: 23px;
+  }
+  .logo {
+    width: 161px;
+    height: 63px;
+    margin: 0 auto;
+  }
+  .search {
+    width: 50%;
+    float: right;
+  }
+  .search input {
+    border-radius: 1.5rem;
+    line-height: 1;
+    width: 90%;
+    height: 40px;
+    position: relative;
+    top: 0.2rem;
+    padding-left: 2.5rem;
+    background: #f6f4f5;
+    border: 1px solid #e6e6e6;
+  }
+  
+  // .fa-search:before {
+  //   position: absolute;
+  //   top: 2px;
+  //   color: #808080;
+  //   left: 0;
+  // }
+  .login {
+    margin-top: 20px;
+  }
+  
+  mat-row:hover {
+    cursor: pointer;
+  }
+  

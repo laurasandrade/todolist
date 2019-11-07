@@ -1,0 +1,27 @@
+<app-header [user]="user.name"></app-header>
+
+<main class="container d-flex row row-center">
+    <div class="mt-1 col-12">
+        <div class="col-12 col-md-12">
+            <h1 class="text-left">Cadastrar Unidade</h1>
+        </div>
+        <div class="col-12 col-md-12">
+            <div class="row">
+                <div class="col-md-8 mb-3">
+                    <mat-form-field class="col-12 d-table">
+                        <input matInput (keyup)="searchTerm$.next($event.target.value)" placeholder="Buscar">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <button class="btn btn-primary" (click)="openFileDialog()">Cadastrar Unidade</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-12 col-center">
+        <app-table-list #tabelaList [itemsPerPage]="itemsPerPage" [columns]="columns" [columnsName]="columnsName">
+        </app-table-list>
+    </div>
+</main>
+<app-footer></app-footer>

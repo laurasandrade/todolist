@@ -1,0 +1,299 @@
+{
+    "total": 109,
+    "items": {
+        "total": 109,
+        "name": "Pesquisa de satisfação de serviço",
+        "questions": [
+            {
+                "id": "5d261a6eed127959ed83a49e",
+                "description": "Qual a sua opinião sobre o serviço de hoje?",
+                "order": 1,
+                "type": "likert",
+                "total": 28,
+                "answers": [
+                    {
+                        "value": "1",
+                        "description": "Totalmente Insatisfeito",
+                        "total": 14
+                    },
+                    {
+                        "value": "5",
+                        "description": "Totalmente Satisfeito",
+                        "total": 6
+                    },
+                    {
+                        "value": "2",
+                        "description": "Insatisfeito",
+                        "total": 5
+                    },
+                    {
+                        "value": "3",
+                        "description": "Neutro",
+                        "total": 3
+                    }
+                ],
+                "labels": [
+                    "Totalmente Insatisfeito",
+                    "Totalmente Satisfeito",
+                    "Insatisfeito",
+                    "Neutro"
+                ],
+                "values": [
+                    14,
+                    6,
+                    5,
+                    3
+                ]
+            },
+            {
+                "id": "5d261a6eed127959ed83a49f",
+                "description": "O que podemos melhorar?",
+                "order": 2,
+                "type": "multi-selection",
+                "total": 49,
+                "answers": [
+                    {
+                        "value": "4",
+                        "description": "Temperatura",
+                        "total": 8
+                    },
+                    {
+                        "value": "5",
+                        "description": "Higiene e limpeza",
+                        "total": 16
+                    },
+                    {
+                        "value": "7",
+                        "description": "Apresentação",
+                        "total": 8
+                    },
+                    {
+                        "value": "1",
+                        "description": "Atendimento",
+                        "total": 5
+                    },
+                    {
+                        "value": "2",
+                        "description": "Tempero",
+                        "total": 5
+                    },
+                    {
+                        "value": "6",
+                        "description": "Reposição",
+                        "total": 6
+                    },
+                    {
+                        "value": "3",
+                        "description": "Sabor",
+                        "total": 1
+                    }
+                ],
+                "labels": [
+                    "Temperatura",
+                    "Higiene e limpeza",
+                    "Apresentação",
+                    "Atendimento",
+                    "Tempero",
+                    "Reposição",
+                    "Sabor"
+                ],
+                "values": [
+                    8,
+                    16,
+                    8,
+                    5,
+                    5,
+                    6,
+                    1
+                ]
+            },
+            {
+                "id": "5d261a6eed127959ed83a4a0",
+                "description": "Gostaria de deixar algum comentário, elogio ou sugestão?",
+                "order": 3,
+                "type": "selection",
+                "total": 6,
+                "answers": [
+                    {
+                        "value": "1",
+                        "description": "Sim, claro!",
+                        "total": 5
+                    },
+                    {
+                        "value": "2",
+                        "description": "Não, obrigado",
+                        "total": 1
+                    }
+                ],
+                "labels": [
+                    "Sim, claro!",
+                    "Não, obrigado"
+                ],
+                "values": [
+                    5,
+                    1
+                ]
+            },
+            {
+                "id": "5d261a6eed127959ed83a4a1",
+                "description": "Escreva abaixo seu comentário, elogio ou sugestão.",
+                "order": 4,
+                "type": "feedback",
+                "total": 26,
+                "answers": [
+                    {
+                        "value": "asdasdf",
+                        "description": null,
+                        "total": 1
+                    },
+                    {
+                        "value": "qqqqqqqqq",
+                        "description": null,
+                        "total": 1
+                    },
+                    {
+                        "value": "sadfasdfasdf",
+                        "description": null,
+                        "total": 1
+                    },
+                    {
+                        "value": "teste",
+                        "description": null,
+                        "total": 1
+                    },
+                    {
+                        "value": "ddddddddd",
+                        "description": null,
+                        "total": 3
+                    },
+                    {
+                        "value": "rrrrrrrrrr",
+                        "description": null,
+                        "total": 1
+                    },
+                    {
+                        "value": "ddddddd",
+                        "description": null,
+                        "total": 1
+                    },
+                    {
+                        "value": "oooooo",
+                        "description": null,
+                        "total": 1
+                    },
+                    {
+                        "value": "kkkkk",
+                        "description": null,
+                        "total": 1
+                    },
+                    {
+                        "value": "Qqqqqqqq",
+                        "description": null,
+                        "total": 1
+                    },
+                    {
+                        "value": "Yyyyy",
+                        "description": null,
+                        "total": 2
+                    },
+                    {
+                        "value": "Uuuuu",
+                        "description": null,
+                        "total": 2
+                    },
+                    {
+                        "value": "Oioiô",
+                        "description": null,
+                        "total": 1
+                    },
+                    {
+                        "value": "Qqqqqqq",
+                        "description": null,
+                        "total": 1
+                    },
+                    {
+                        "value": "Xxxxx",
+                        "description": null,
+                        "total": 1
+                    },
+                    {
+                        "value": "aaaa",
+                        "description": null,
+                        "total": 1
+                    },
+                    {
+                        "value": "asdfasdfasdf",
+                        "description": null,
+                        "total": 1
+                    },
+                    {
+                        "value": "asdfasdf",
+                        "description": null,
+                        "total": 2
+                    },
+                    {
+                        "value": "jjjjj",
+                        "description": null,
+                        "total": 1
+                    },
+                    {
+                        "value": "vhvhvhvhvhvhhv",
+                        "description": null,
+                        "total": 1
+                    },
+                    {
+                        "value": "Testando a resposta do peaozinho q ta sastifeito.",
+                        "description": null,
+                        "total": 1
+                    }
+                ],
+                "labels": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "values": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    3,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    2,
+                    1,
+                    1,
+                    1
+                ]
+            }
+        ]
+    }
+}

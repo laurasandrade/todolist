@@ -1,0 +1,109 @@
+<app-header></app-header>
+
+<div class="container-fluid mt-3">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+      <app-submenu (sendBranch)="onBranchChange($event)"></app-submenu>
+    </div>
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 mb-5" role="main">
+      <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center "
+      >
+        <h1>Relatório de Lista de Respostas</h1>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <h2 class="spaceTitle">Pesquisa de satisfação de serviços</h2>
+        <button (click)="makeReport()" class="pdf">
+          <i class="fas fa-file-excel"></i> CSV
+        </button>
+      </div>
+
+      <app-select-unit
+        class="d-block d-sm-none"
+        (sendBranch)="onBranchChange($event)"
+      ></app-select-unit>
+
+      <div *ngIf="polls">
+        <app-filter-dates-and-another
+          [polls]="polls"
+          (startDate)="onStartDateChange($event)"
+          (endDate)="onEndDateChange($event)"
+          (startHour)="onStartHourChange($event)"
+          (endHour)="onEndHourChange($event)"
+          (startMinutes)="onStartMinutesChange($event)"
+          (endMinutes)="onEndMinutesChange($event)"
+          (daysOfWeek)="onDaysOfWeekChange($event)"
+          (poll)="onPollChange($event)"
+          [noShow]="noShowFilterFields"
+        ></app-filter-dates-and-another>
+      </div>
+      <div id="report_print" #content>
+        <div *ngIf="rows">
+          <div class="p-2">
+            <div class="media text-muted">
+              <div class="p-2">
+                <div
+                  class="media text-muted pt-3"
+                  *ngFor="
+                    let row of rows
+                      | paginate
+                        : {
+                            id: config.id,
+                            itemsPerPage: config.itemsPerPage,
+                            currentPage: config.currentPage,
+                            totalItems: config.totalItems
+                          }
+                  "
+                >
+                  <div
+                    class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray"
+                  >
+                    <div
+                      class="d-flex justify-content-between align-items-center w-100"
+                    >
+                      <strong class="text-gray-dark"
+                        >Unidade de Pesquisa: {{ row.unidade }}</strong
+                      >
+                      <span>Avaliação número: {{ row.group }}</span>
+                    </div>
+                    <p class="d-block">
+                      {{ row.date | date: "dd/MM/yyyy HH:mm" }}
+                    </p>
+                    <p class="d-block">
+                      <strong
+                        class="text-gray-dark"
+                        *ngFor="let pergunta of row.questions"
+                        >{{ pergunta.description }}
+                        <br />
+                        <span class="respostas">{{
+                          trataPergunta(pergunta.answers)
+                        }}</span>
+                        <br
+                      /></strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer pb-0 pt-3 d-flex m-0 justify-content-center">
+        <pagination-controls
+          (pageChange)="onChangePage($event)"
+          id="paginatorAnswers"
+          directionLinks="false"
+          responsive="false"
+          previousLabel="Anterior"
+          nextLabel="Próximo"
+          screenReaderPaginationLabel="Paginação"
+          screenReaderPageLabel="Página"
+          screenReaderCurrentLabel="Página atual"
+        ></pagination-controls>
+      </div>
+    </main>
+  </div>
+</div>
+<app-footer></app-footer>

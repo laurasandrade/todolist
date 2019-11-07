@@ -1,0 +1,77 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.mt-1 {
+  margin-top: 1.5rem !important;
+}
+
+.mt-3 {
+  margin-top: 3.1rem !important;
+}
+h1 {
+  font-size: 1.5rem;
+}
+h2 {
+  font-size: 1rem;
+  font-weight: 100;
+}
+.spaceTitle {
+  font-size: 30px;
+  margin-top: 20px;
+}
+body > app-root > app-report > div > div > main,
+body > app-root > app-answers-list > div > div > main{
+  padding-left: 0;
+}
+#nav > ul{
+  padding-left: 55px;
+}
+.row-top {
+  flex-direction: row;
+}
+
+.row-center {
+  text-align: center;
+  margin: 90px auto;
+}
+
+.col-center {
+  display: inline-block;
+  float: none;
+}
+
+.center1 {
+  left: 32%;
+}
+
+.ngx-pagination .current {
+  background: #941519 !important;
+}
+.pdf {
+	-moz-box-shadow:inset 0px 1px 0px 0px #cf866c;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #cf866c;
+	box-shadow:inset 0px 1px 0px 0px #cf866c;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #d0451b), color-stop(1, #bc3315));
+	background-color:#d0451b;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #942911;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+  font-size:10px;
+  height: 30px;
+  margin: 20px 10px 0 0;
+
+}
+.pdf:hover {
+background-color:#bc3315;
+}
+.pdf:active {
+	position:relative;
+	top:1px;
+}

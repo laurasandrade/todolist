@@ -1,0 +1,27 @@
+<nav class="col-md-2 d-none d-md-block bg-light sidebar mt-5">
+  <div class="sidebar-sticky mt-3">
+
+    <app-select-unit (sendBranch)="makeChange($event)"></app-select-unit>
+
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a [routerLink]="['/report/', this.branchSelected].join('')" class="nav-link">
+          <span data-feather="shopping-cart"></span>
+          Relatório Consolidado
+        </a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/answers-list/', this.branchSelected].join('')" class="nav-link">
+          <span data-feather="users"></span>
+          Relatório de Lista de Respostas
+        </a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/research-by-hour/', this.branchSelected].join('')" class="nav-link">
+          <span data-feather="users"></span>
+          Por Horários
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

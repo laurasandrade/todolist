@@ -1,0 +1,80 @@
+<app-header></app-header>
+<div class="container-fluid mt-3">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+      <app-submenu (sendBranch)="onBranchChange($event)"></app-submenu>
+    </div>
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3" role="main">
+      <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center"
+      >
+        <h1>Relatório Consolidado</h1>
+      </div>
+      <div *ngIf="rows" class="d-flex justify-content-between">
+        <h2 class=" spaceTitle">{{ rows.name }}</h2>
+        <button (click)="makeReport()" class="pdf">
+          <i class="fas fa-file-pdf"></i> PDF
+        </button>
+      </div>
+
+      <app-select-unit
+        class="d-block d-sm-none"
+        (sendBranch)="onBranchChange($event)"
+      ></app-select-unit>
+
+      <div *ngIf="polls">
+        <app-filter-dates-and-another
+          [branch]="localBranch"
+          [polls]="polls"
+          (startDate)="onStartDateChange($event)"
+          (endDate)="onEndDateChange($event)"
+          (startHour)="onStartHourChange($event)"
+          (endHour)="onEndHourChange($event)"
+          (startMinutes)="onStartMinutesChange($event)"
+          (endMinutes)="onEndMinutesChange($event)"
+          (daysOfWeek)="onDaysOfWeekChange($event)"
+          (poll)="onPollChange($event)"
+          [noShow]="noShowFilterFields"
+        ></app-filter-dates-and-another>
+      </div>
+      <div class="table-responsive mt-5 mb-4">
+        <div *ngIf="rows">
+          <div
+            class="p-2"
+            *ngFor="let question of rows.questions; let i = index"
+          >
+            <div *ngIf="question.type !== 'feedback'">
+              <h6 class="border-bottom border-gray pb-2 mb-0">
+                {{ question.description }}
+              </h6>
+              <div class="container" *ngIf="i == 0">
+                <app-graficos
+                  [consolidatedData]="question"
+                  [backgroundColorArray]="backgroundColorArrayOpiniaoSatisfeito"
+                ></app-graficos>
+              </div>
+              <div class="container" *ngIf="i > 0">
+                <app-graficos [consolidatedData]="question"></app-graficos>
+              </div>
+
+              <div class="col d-flex align-items-center">
+                <span
+                  class="d-block media-destaque mt-4"
+                  *ngIf="question.media"
+                >
+                  <p>Média:</p>
+                  {{ [question.media, "%"].join("") }}
+                </span>
+                <strong class="text-gray-dark qtdResp"
+                  >{{ question.total }} Respostas</strong
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<app-footer></app-footer>

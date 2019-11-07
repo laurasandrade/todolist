@@ -1,0 +1,34 @@
+<app-header></app-header>
+
+<main class="container d-flex row row-center">
+    <div class="mt-1 col-12">
+        <div class="col-12 col-md-12">
+            <h1 class="text-left">Banner de Comunicação</h1>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-8">
+                <mat-form-field>
+                    <mat-label>Toppings</mat-label>
+                    <mat-select [formControl]="toppings" multiple>
+                        <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-8">
+            <form>
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Upload de imagem (Formato .PNG)</label>
+                    <input type="file" class="form-control-file btn-file" id="exampleFormControlFile1">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- <div class="col-md-12 col-center">
+         <input type="file" (change)="inputFileChange($event)" class="btn-file" />
+     </div> -->
+</main>
+<app-footer></app-footer>

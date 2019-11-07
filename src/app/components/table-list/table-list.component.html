@@ -1,0 +1,29 @@
+<div class="example-container mat-elevation-z8">
+    <mat-table
+        [dataSource]="rows | paginate: { id: config.id, itemsPerPage: config.itemsPerPage, currentPage: config.currentPage, totalItems: config.totalItems }"
+        class="mat-elevation-z8 mt-1" [class.isMobile]="isMobile" *ngIf="!loadingData">
+        <ng-container *ngFor="let column of columns; index as i" matColumnDef="{{column.type == 'text' ? column.value : 'LINK' + column.value}}">
+            <mat-header-cell *matHeaderCellDef>{{columnsName[i]}}</mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <span class="mobile-label">{{columnsName[i]}}</span>
+                <span *ngIf="column.type == 'date'" >{{row[column.value] | date: column.format}} </span>
+                <span *ngIf="column.type == 'text'">{{row[column.value]}} </span>
+                <span *ngIf="column.type == 'link'">
+                    <a [routerLink]="column.URL.replace('$LINK$',row[column.value])">{{column.description}}</a>
+                </span>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="getColumnsName()"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: getColumnsName();"></mat-row>
+    </mat-table>
+    <div class="p-4" *ngIf="config.totalItems == 0">
+        Não foram encontrados registros.
+    </div>
+    <mat-spinner *ngIf="loadingData" class="mx-auto"></mat-spinner>
+    <div class="card-footer pb-0 pt-3 d-flex m-0 justify-content-center">
+        <pagination-controls (pageChange)="onChangePage($event)" id="paginatorTableList" directionLinks="false"
+            responsive="false" previousLabel="Anterior" nextLabel="Próximo" screenReaderPaginationLabel="Paginação"
+            screenReaderPageLabel="Página" screenReaderCurrentLabel="Página atual"></pagination-controls>
+    </div>
+</div>

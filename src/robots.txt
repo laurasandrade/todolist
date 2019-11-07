@@ -1,0 +1,3 @@
+# Bloqueia todos os robos
+User-agent: *
+Disallow: /

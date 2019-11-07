@@ -1,0 +1,15 @@
+<mat-form-field appearance="outline" *ngIf="!user.isAdmin">
+    <mat-label>Selecionar unidade</mat-label>
+    <mat-select [(ngModel)]="branchSelected" (selectionChange)="makeChange($event.value)" disableOptionCentering>
+      <mat-option *ngFor="let branch of branches | async" [value]="branch.id">{{branch.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" *ngIf="user.isAdmin">
+    <input type="text" placeholder="Selecionar unidade" aria-label="Number" matInput [formControl]="branchControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSelectionChanged($event)">
+      <mat-option *ngFor="let branch of branches | async" [value]="branch.id">
+        {{branch.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
